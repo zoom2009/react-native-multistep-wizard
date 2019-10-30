@@ -65,13 +65,13 @@ export default class MultiStep extends Component {
         this.props.onFinish(this.getStepState())
     }
     render(){
-        
-        
+        const containerStyle = this.props.containerStyle || {}
+        const contentContainerStyle = this.props.contentContainerStyle || {}
+
         return (
-            <View>
-                <ScrollView>
+            <View style={containerStyle}>
+                <ScrollView contentContainerStyle={contentContainerStyle}>
                    {this.state.steplist[this.state.curState]}
-                    
                 </ScrollView>
             </View>
         )
