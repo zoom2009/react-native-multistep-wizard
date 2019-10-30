@@ -67,10 +67,11 @@ export default class MultiStep extends Component {
     render(){
         const containerStyle = this.props.containerStyle || {}
         const contentContainerStyle = this.props.contentContainerStyle || {}
+        const bounces = this.props.bounces || true
 
         return (
             <View style={containerStyle}>
-                <ScrollView contentContainerStyle={contentContainerStyle}>
+                <ScrollView bounces={bounces} contentContainerStyle={contentContainerStyle}>
                    {this.state.steplist[this.state.curState]}
                 </ScrollView>
             </View>
